@@ -1,3 +1,5 @@
+'use strict';
+
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 
@@ -93,6 +95,7 @@ describe("Shopping List", function() {
   //  5. Inspect the response object to ensure it
   //  has right status code and that we get back an updated
   //  item with the right data in it.
+
   it("should update items on PUT", function() {
     // we initialize our updateData here and then after the initial
     // request to the app, we update it with an `id` property so

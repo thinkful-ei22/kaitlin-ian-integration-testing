@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require("express");
 const router = express.Router();
 
@@ -70,12 +72,12 @@ router.put("/:id", (req, res) => {
     return res.status(400).send(message);
   }
   console.log(`Updating shopping list item \`${req.params.id}\``);
-  Recipes.update({
+  const recipeUpdate = Recipes.update({
     id: req.params.id,
     name: req.body.name,
     ingredients: req.body.ingredients
   });
-  res.status(204).end();
+  res.status(200).json(recipeUpdate);
 });
 
 module.exports = router;
